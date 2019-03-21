@@ -28,7 +28,7 @@ class Layout extends Component{
 <main>
     {this.props.children}
 </main>
-             <footer className="Footer">
+    {/*         <footer className="Footer">
         <ul>
             <li>
                 <h1>AWC</h1>
@@ -37,7 +37,7 @@ class Layout extends Component{
                 <h1>Created by Alex Pyvovarov and Irina Telesheva</h1>
             </li>
         </ul>
-             </footer>
+             </footer>*/}
          </div>
      );
  }

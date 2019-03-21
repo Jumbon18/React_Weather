@@ -34,11 +34,11 @@ class Weather extends React.Component{
         return(
             <div className="Weather">
                 <div className="WeatherWrapper">
-<h1>Weather</h1>
+
                     {this.props.loading  || !this.props.weatherData ? <Loader/>:
                         <ActiveWeather
                             city ={this.props.city}
-                            temperature ={"14"}
+                            temperature ={"14°"}
                         />
                     }
                     <ul>
