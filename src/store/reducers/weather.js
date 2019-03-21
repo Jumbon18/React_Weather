@@ -3,7 +3,7 @@ import {FETCH_WEATHER_START, FETCH_WEATHER_SUCCESS} from "../actions/actionTypes
 const initialState = {
     loading: false,
     weatherData: [],
-    city:null,
+    activeWeather:0
 
 };
 export default function weatherReducer ( state = initialState,action){
