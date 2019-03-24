@@ -3,7 +3,8 @@ import './DailyWeather.css';
 const DailyWeather = props =>{
     return(
         <div className='DailyWeather'>
-        <h1>Daily Weather</h1>
+        <h3>Daily Weather</h3>
+
         </div>
     )
 };
