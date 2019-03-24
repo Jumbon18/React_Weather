@@ -35,12 +35,14 @@ console.log('Start');
         return(
             <div className="Weather">
                 <div className="WeatherWrapper">
-<h1>Weather</h1>
+
+
                     {this.props.loading || this.props.weatherData.length <= 0 ? <Loader/>
                     :
                         <ActiveWeather
                             city ={this.props.weatherData[this.props.activeWeather].city}
                             temperature ={this.props.weatherData[this.props.activeWeather].list[this.props.activeWeather].main.temp}
+-
                         />
                     }
                     <ul>
