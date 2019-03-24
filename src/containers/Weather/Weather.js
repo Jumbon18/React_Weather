@@ -24,21 +24,25 @@ class Weather extends React.Component{
    async componentDidMount() {
       this.props.fetchWeather();
       console.log(this.props.weatherData);
-
+console.log(this.props.weatherData.city);
     }
 
 
     render() {
+       console.log(this.props.weatherData);
+console.log('Start');
 
-        console.log(this.props,this.props.weatherData.data);
         return(
             <div className="Weather">
                 <div className="WeatherWrapper">
 
-                    {this.props.loading  || !this.props.weatherData ? <Loader/>:
+
+                    {this.props.loading || this.props.weatherData.length <= 0 ? <Loader/>
+                    :
                         <ActiveWeather
-                            city ={this.props.city}
-                            temperature ={"14°"}
+                            city ={this.props.weatherData[this.props.activeWeather].city}
+                            temperature ={this.props.weatherData[this.props.activeWeather].list[this.props.activeWeather].main.temp}
+-
                         />
                     }
                     <ul>
@@ -53,7 +57,7 @@ function mapStateToProps(state) {
     return{
         loading: state.weather.loading,
         weatherData:state.weather.weatherData,
-        city:state.weather.city
+        activeWeather: state.weather.activeWeather
     }
 }
 function mapDispatchToProps(dispatch) {

@@ -6,10 +6,21 @@ export function fetchWeather() {
         dispatch(fetchWeatherStart());
         try{
             const APIKEY = 'e335452a457543969efee8dcb3b78ad6';
-            const response = await axios.get(`https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/forecast?q=Kharkiv&cnt=1&APPID=${APIKEY}`);
-            console.log(response);
-            const city = response.data.city.name;
-            dispatch(fetchWeatherSuccess(response,city));
+            const dataGlobal = await axios.get(`https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/forecast?q=Kharkiv&units=metric&cnt=1&APPID=${APIKEY}`);
+                  const response = [];
+            const city = dataGlobal.data.city.name;
+            const list = dataGlobal.data.list;
+
+            for(let key in list[0].main){
+
+                list[0].main[key]=Math.round(list[0].main[key]);
+            }
+
+response.push({
+    city,
+    list
+});
+            dispatch(fetchWeatherSuccess(response));
         }
         catch (e) {
             console.log(e);
