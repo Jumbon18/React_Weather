@@ -1,8 +1,10 @@
-import {FETCH_WEATHER_START, FETCH_WEATHER_SUCCESS} from "../actions/actionTypes";
+import {FETCH_WEATHER_DATA_SUCCESS, FETCH_WEATHER_START} from "../actions/actionTypes";
 
 const initialState = {
     loading: false,
     weatherData: [],
+    mainWeatherData:null,
+    dailyWeatherData:null,
     activeWeather:0
 
 };
@@ -12,11 +14,12 @@ export default function weatherReducer ( state = initialState,action){
           return{
               ...state,loading:true
           };
-      case FETCH_WEATHER_SUCCESS:
-        return {
-            ...state,weatherData:action.response,loading: false,
-            city:action.city
-        };
+
+      case FETCH_WEATHER_DATA_SUCCESS:
+          return{
+              ...state,mainWeatherData:action.mainWeatherData,dailyWeatherData:action.dailyWeatherData,
+              loading: false,
+          };
       default:
           return state;
   }
