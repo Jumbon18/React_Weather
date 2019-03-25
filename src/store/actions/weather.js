@@ -1,7 +1,14 @@
 import axios from 'axios';
 import {FETCH_WEATHER_DATA_SUCCESS, FETCH_WEATHER_START} from "./actionTypes";
 
-export function fetchWeather() {
+function round(objArr) {
+    for(let key in objArr){
+   objArr[key]  = Math.round(objArr[key]);
+    }
+}
+export function fetchWeather(
+
+) {
     return async dispatch => {
         dispatch(fetchWeatherStart());
         try {
@@ -16,10 +23,10 @@ export function fetchWeather() {
                 city:allWeather.city,
                 list:[]
             };
-            for (let key in allWeather.list[0].main) {
 
-                allWeather.list[0].main[key] = Math.round(allWeather.list[0].main[key]);
-            }
+            allWeather.list.forEach( item =>{
+               round(item.main);
+            });
 
             console.log(allWeather);
 
@@ -29,23 +36,40 @@ export function fetchWeather() {
                 const serverDAY = parseInt(serverDate[2]);
 
                 const currentDate = new Date().getDate();
+
                 if(currentDate === serverDAY){
                     mainWeatherData.list.push(weather)
                 }
                 else{
                     if((serverDAY !==  parseInt(allWeather.list[index-1].dt_txt.split(' ')[0].split('-')[2])) && index > 0 ){
-                        dailyWeatherData.list.push([weather]
+                        dailyWeatherData.list.push({
+                            maxTemp:0,
+                            minTemp:0,
+                            dayWeather:[weather]}
                         );
                     }
                    else{
-                        dailyWeatherData.list[dailyWeatherData.list.length - 1].push(weather);
+                        dailyWeatherData.list[dailyWeatherData.list.length - 1].dayWeather.push(weather);
                     }
 
                 }
 
             });
+
     console.log(mainWeatherData,dailyWeatherData);
 
+            dailyWeatherData.list.forEach((weatherItem,index) =>{
+               const dayWeatherArr = dailyWeatherData.list[index].dayWeather;
+                  const temperature =   dayWeatherArr.map((item,index) =>{
+                  return  item.main.temp;
+               });
+                dailyWeatherData.list[index].maxTemp = Math.max(...temperature);
+                dailyWeatherData.list[index].minTemp = Math.min(...temperature);
+
+
+
+            });
+console.log(dailyWeatherData);
             dispatch(fetchWeatherDataSuccess(mainWeatherData,dailyWeatherData));
         } catch (e) {
             console.log(e);

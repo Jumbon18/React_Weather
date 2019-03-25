@@ -14,7 +14,11 @@ class Weather extends React.Component{
         return Object.keys(this.props.dailyWeatherData.list).map((item,index)=>{
             return (
                 <li key={index + 'a'}>
-                    <DailyWeather/>
+                    <DailyWeather
+                        maxTemp = {this.props.dailyWeatherData.list[index].maxTemp}
+                        minTemp = {this.props.dailyWeatherData.list[index].minTemp}
+
+                    />
                 </li>
             )  });
     };
