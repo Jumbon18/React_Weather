@@ -9,4 +9,8 @@
     font-family: 'Questrial', sans-serif;
     text-align: center;
 }
+.Active-temp{
+    display: flex;
+    justify-content: center;
+}
 

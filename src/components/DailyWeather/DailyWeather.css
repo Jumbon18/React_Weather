@@ -9,3 +9,7 @@
     list-style: none;
     margin: 0;
 }
+.Daily-temp{
+    display: flex;
+    justify-content: space-around;
+}
