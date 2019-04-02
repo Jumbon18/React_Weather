@@ -17,8 +17,12 @@ function getFullMonth(month) {
 
 
 
-export function fetchWeather(query = "Kharkiv") {
+export function fetchWeather(query) {
     return async dispatch => {
+        console.log(localStorage);
+        if(query  === undefined){
+            query = "Kharkiv";
+        }
         dispatch(fetchWeatherStart());
 console.log(query);
             try {
@@ -92,6 +96,9 @@ console.log(query);
                 });
 
 // Изменияем STORE
+                localStorage.setItem('query',query);
+                localStorage.setItem('MainData',mainWeatherData);
+                localStorage.setItem('DailyData', dailyWeatherData );
                 dispatch(fetchWeatherDataSuccess(mainWeatherData, dailyWeatherData));
             } catch (e) {
                 console.log(e);

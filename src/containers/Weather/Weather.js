@@ -38,6 +38,7 @@ this.props.fetchWeather();
     }
     searchRequest = event =>{
          event.preventDefault();
+         if(this.props.query)
          this.props.fetchWeather(this.props.query);
     };
 
