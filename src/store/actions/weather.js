@@ -1,5 +1,11 @@
 import axios from 'axios';
-import {FETCH_INPUT_VALUE, FETCH_SEARCH_BUTTON, FETCH_WEATHER_DATA_SUCCESS, FETCH_WEATHER_START} from "./actionTypes";
+import {
+    FETCH_CLEAR_INPUT,
+    FETCH_INPUT_VALUE,
+    FETCH_SEARCH_BUTTON,
+    FETCH_WEATHER_DATA_SUCCESS,
+    FETCH_WEATHER_START
+} from "./actionTypes";
 
 function round(objArr) {
     for(let key in objArr){
@@ -19,17 +25,17 @@ function getFullMonth(month) {
 
 export function fetchWeather(query) {
     return async dispatch => {
-        console.log(localStorage);
+
         if(query  === undefined){
             query = "Kharkiv";
         }
         dispatch(fetchWeatherStart());
-console.log(query);
+
             try {
                 const APIKEY = 'e335452a457543969efee8dcb3b78ad6';
-                console.log(new Date().getDate());
+
                 const dataGlobalAll = await axios.get(`https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/forecast?q=${query}&units=metric&APPID=${APIKEY}`);
-                console.log(dataGlobalAll);
+
                 const allWeather = dataGlobalAll.data;
 // Main weather object
                 const mainWeatherData = {
@@ -47,7 +53,6 @@ console.log(query);
                     round(item.main);
                 });
 
-                console.log(allWeather);
 //разбиваем наш большой массив , который мы получили с сервера делим на Main and Daily
                 allWeather.list.forEach((weather, index) => {
                     const fullDate = weather.dt_txt.split(' ');
@@ -81,7 +86,6 @@ console.log(query);
 
                 });
 // insert icon for daily weather
-                console.log(mainWeatherData, dailyWeatherData);
 // Подсчет максимальной и минимальной тмпр для Daily
                 dailyWeatherData.list.forEach((weatherItem, index) => {
                     const dayWeatherArr = dailyWeatherData.list[index].dayWeather;
@@ -96,9 +100,7 @@ console.log(query);
                 });
 
 // Изменияем STORE
-                localStorage.setItem('query',query);
-                localStorage.setItem('MainData',mainWeatherData);
-                localStorage.setItem('DailyData', dailyWeatherData );
+
                 dispatch(fetchWeatherDataSuccess(mainWeatherData, dailyWeatherData));
             } catch (e) {
                 console.log(e);
@@ -127,6 +129,11 @@ export function fetchWeatherDataSuccess(mainWeatherData,dailyWeatherData) {
         mainWeatherData,
         dailyWeatherData
     }
+}
+export function fetchClearInput() {
+  return{
+      type:FETCH_CLEAR_INPUT
+  }
 }
 export function fetchSearchButton() {
     return {

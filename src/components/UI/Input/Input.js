@@ -1,6 +1,7 @@
 import React from 'react';
 import './Input.css';
 const Input = props =>{
+console.log("INPUT",props);
     const inputType = props.type || 'text';
     const cls = ['Input',
     props.styleInput];

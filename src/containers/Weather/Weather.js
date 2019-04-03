@@ -5,7 +5,7 @@ import DailyWeather from '../../components/DailyWeather/DailyWeather';
 
 
 import {connect} from "react-redux";
-import {fetchInputValue, fetchWeather} from "../../store/actions/weather";
+import {fetchClearInput, fetchInputValue, fetchWeather} from "../../store/actions/weather";
 import Loader from "../../components/UI/Loader/Loader";
 import {url} from "../../Icon/icon";
 import Search from "../../components/Search/Search";
@@ -29,21 +29,26 @@ class Weather extends React.Component {
     };
 
 shouldComponentUpdate(nextProps, nextState, nextContext) {
-    return this.props.loading !== nextProps.loading;
+    return( (this.props.loading !== nextProps.loading) || (this.props.query !== nextProps.query));
 }
 
     componentDidMount() {
 this.props.fetchWeather();
 
     }
-    searchRequest = event =>{
-         event.preventDefault();
-         if(this.props.query)
-         this.props.fetchWeather(this.props.query);
+    searchRequest =  event =>{
+
+    event.preventDefault();
+    if(this.props.query){
+        this.props.fetchClearInput();
+
+             this.props.fetchWeather(this.props.query);
+
+         }
     };
 
     render() {
-        console.log('Render', this.props);
+        console.log('Render', this.props,'----------------------');
         return (
             <div className="Weather">
                 <Search
@@ -51,11 +56,12 @@ this.props.fetchWeather();
                     styleInput="Search-input"
                     query={this.props.query}
                     typeBtn="search"
-                    onClick={this.searchRequest}
-                    onChange={event => this.props.fetchInput(event.target.value)}
+                    onClick={ this.searchRequest}
+                    onChange={event => this.props.fetchInput(event)}
                     placeholder="Searching for weather"
                 />
                 <div className="WeatherWrapper">
+
 
 
                     {this.props.loading || !this.props.mainWeatherData ? <Loader/>
@@ -94,8 +100,8 @@ function mapStateToProps(state) {
 function mapDispatchToProps(dispatch) {
     return {
         fetchWeather: query => dispatch(fetchWeather(query)),
-        fetchInput: value => dispatch(fetchInputValue(value))
-
+        fetchInput: event => dispatch(fetchInputValue(event.target.value)),
+        fetchClearInput: () => dispatch(fetchClearInput())
     }
 }
 
