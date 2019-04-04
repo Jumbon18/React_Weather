@@ -1,7 +1,7 @@
 import {
-    FETCH_CLEAR_INPUT,
+    FETCH_CLEAR_INPUT, FETCH_CLICKED_SEARCH_ELEMENT,
     FETCH_INPUT_VALUE,
-    FETCH_SEARCH_BUTTON,
+    FETCH_SEARCH_BUTTON, FETCH_SEARCH_SUCCESS,
     FETCH_WEATHER_DATA_SUCCESS,
     FETCH_WEATHER_START
 } from "../actions/actionTypes";
@@ -13,7 +13,7 @@ const initialState = {
     dailyWeatherData:null,
     currentDate:new Date().getTime(),
     query:'',
-
+    searchList:null
 
 };
 export default function weatherReducer ( state = initialState,action) {
@@ -40,7 +40,14 @@ export default function weatherReducer ( state = initialState,action) {
             return {
                 ...state, query: ''
             };
-
+        case FETCH_SEARCH_SUCCESS:
+            return{
+                ...state,searchList: action.searchList
+            };
+        case FETCH_CLICKED_SEARCH_ELEMENT:
+            return{
+                ...state,query:action.clickedQuery
+            };
       default:
           return state;
   }
