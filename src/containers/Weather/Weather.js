@@ -72,6 +72,7 @@ this.props.fetchWeather();
                                 temperature={this.props.mainWeatherData.list[0].main.temp}
                                 time={this.props.mainWeatherData.time}
                                 icon={`${url}${this.props.mainWeatherData.icon}.png`}
+
                             />
                             <ul>
                                 {this.renderDailyWeather()}

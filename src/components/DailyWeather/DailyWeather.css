@@ -1,9 +1,10 @@
-.DailyWeather{
+.DailyWeather {
     font-family: 'Questrial', sans-serif;
     height: 150px;
     width: 200px;
     color: white;
     text-align: center;
+    box-sizing: border-box;
 }
 .w-list {
     list-style: none;
@@ -12,4 +13,9 @@
 .Daily-temp{
     display: flex;
     justify-content: space-around;
+}
+.DailyWeather:hover{
+    border: 2px solid #ffffff;
+    transition: 5ms linear;
+    cursor: pointer;
 }
