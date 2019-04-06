@@ -28,6 +28,7 @@ input:focus{
     background: none;
     font-family: inherit;
     color: inherit;
-    font-size: 1.7rem;
+    font-size: 1.5rem;
     width: 30rem;
+    margin-top: 10px;
 }

@@ -55,7 +55,7 @@ this.props.fetchWeather();
                     typeInput="text"
                     styleInput="Search-input"
                     query={this.props.query}
-                    typeBtn="search"
+                    typeBtn="btn-1"
                     onClick={ this.searchRequest}
                     onChange={event => this.props.fetchInput(event)}
                     placeholder="Searching for weather"

@@ -1,6 +1,7 @@
 import axios from 'axios';
 import {
     FETCH_CLEAR_INPUT,
+    FETCH_CLEAR_INPUT_VALUE,
     FETCH_INPUT_VALUE,
     FETCH_SEARCH_BUTTON,
     FETCH_WEATHER_DATA_SUCCESS,
@@ -100,7 +101,6 @@ export function fetchWeather(query) {
                 });
 
 // Изменияем STORE
-
                 dispatch(fetchWeatherDataSuccess(mainWeatherData, dailyWeatherData));
             } catch (e) {
                 console.log(e);
@@ -122,7 +122,11 @@ export function fetchInputValue(query) {
         query
     }
 }
-
+export function fethClearValue() {
+    return{
+        type:FETCH_CLEAR_INPUT_VALUE
+    }
+}
 export function fetchWeatherDataSuccess(mainWeatherData,dailyWeatherData) {
     return{
         type:FETCH_WEATHER_DATA_SUCCESS,
