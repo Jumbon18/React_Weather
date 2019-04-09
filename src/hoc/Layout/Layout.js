@@ -38,10 +38,10 @@ class Layout extends Component{
                 </div>
                 <div className="footer-text">
                 <p>Get our contacts:</p>
-                <img src={facebook} className="footer-img"/>
-                <img src={instagram} className="footer-img"/>
-                <img src={skype} className="footer-img"/>
-                <img src={github} className="footer-img"/>
+                <img src={facebook} className="footer-img" alt="facebook"/>
+                <img src={instagram} className="footer-img" alt="instagram"/>
+                <img src={skype} className="footer-img" alt="skype"/>
+                <img src={github} className="footer-img" alt="github"/>
             </div>
             </div>
     </div>}

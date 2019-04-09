@@ -61,10 +61,11 @@
     font-size: 12px;
     height: 45px;
 }
-
-/* Demo Stuff End -> */
-
-/* <- Magic Stuff Start */
+.favorite-btn {
+    position: absolute;
+    left: 85%;
+    top: 20px;
+}
 
 .btn:hover {
     background-position: right center; /* change the direction of the change here */
