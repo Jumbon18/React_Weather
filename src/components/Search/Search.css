@@ -1,13 +1,14 @@
 .Search{
     position: absolute;
+    padding-left: 30px;
     top: 20px;
     left: 50%;
     transform: translateX(-50%);
     display: flex;
-
     background-color: #fff;
     border-radius: 10rem;
     align-items: center;
-    padding-left: 3rem;
     transition: all .3s;
+    height: 45px;
 }
+

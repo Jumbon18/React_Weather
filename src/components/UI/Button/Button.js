@@ -2,7 +2,7 @@ import React from 'react';
 import './Button.css';
 
 const Button = (props) =>{
-  const cls=  ['Button',
+  const cls=  ['btn',
   props.typeBtn];
   return  (
         <button

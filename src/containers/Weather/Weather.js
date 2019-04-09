@@ -63,7 +63,7 @@ this.props.fetchWeather();
                     typeInput="text"
                     styleInput="Search-input"
                     query={this.props.query}
-                    typeBtn="search"
+                    typeBtn="btn-1"
                     onClick={ this.searchRequest}
                     onChange={event => this.props.fetchInput(event)}
                     placeholder="Searching for weather"
@@ -86,6 +86,7 @@ this.props.fetchWeather();
                                 temperature={this.props.mainWeatherData.list[0].main.temp}
                                 time={this.props.mainWeatherData.time}
                                 icon={`${url}${this.props.mainWeatherData.icon}.png`}
+
                             />
                             <ul>
                                 {this.renderDailyWeather()}
