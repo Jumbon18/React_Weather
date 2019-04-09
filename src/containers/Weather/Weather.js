@@ -5,10 +5,17 @@ import DailyWeather from '../../components/DailyWeather/DailyWeather';
 
 
 import {connect} from "react-redux";
-import {fetchClearInput, fetchInputValue, fetchWeather} from "../../store/actions/weather";
+import {
+    fetchClearInput,
+    fetchClickedSearchElement,
+    fetchInputValue,
+    fetchSearchList,
+    fetchWeather
+} from "../../store/actions/weather";
 import Loader from "../../components/UI/Loader/Loader";
 import {url} from "../../Icon/icon";
 import Search from "../../components/Search/Search";
+import SearchList from "./SearchList/SearchList";
 
 class Weather extends React.Component {
 
@@ -47,6 +54,7 @@ this.props.fetchWeather();
          }
     };
 
+
     render() {
         console.log('Render', this.props,'----------------------');
         return (
@@ -60,6 +68,12 @@ this.props.fetchWeather();
                     onChange={event => this.props.fetchInput(event)}
                     placeholder="Searching for weather"
                 />
+                {this.props.searchList && this.props.query ?    <SearchList
+                    searchList={this.props.searchList}
+                    clickedSearch={this.props.fetchClickedSearchElement}
+
+                />: null    }
+
                 <div className="WeatherWrapper">
 
 
@@ -94,7 +108,8 @@ function mapStateToProps(state) {
         mainWeatherData: state.weather.mainWeatherData,
         dailyWeatherData: state.weather.dailyWeatherData,
         query: state.weather.query,
-        touchedSearchBtn: state.weather.touchedSearchBtn
+        touchedSearchBtn: state.weather.touchedSearchBtn,
+        searchList:state.weather.searchList
     }
 }
 
@@ -102,7 +117,8 @@ function mapDispatchToProps(dispatch) {
     return {
         fetchWeather: query => dispatch(fetchWeather(query)),
         fetchInput: event => dispatch(fetchInputValue(event.target.value)),
-        fetchClearInput: () => dispatch(fetchClearInput())
+        fetchClearInput: () => dispatch(fetchClearInput()),
+        fetchClickedSearchElement:(element) => dispatch(fetchClickedSearchElement(element))
     }
 }
 
