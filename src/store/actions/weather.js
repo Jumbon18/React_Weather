@@ -4,7 +4,7 @@ import {
     FETCH_CLEAR_INPUT, FETCH_CLICKED_SEARCH_ELEMENT,
 
     FETCH_INPUT_VALUE,
-    FETCH_SEARCH_BUTTON, FETCH_SEARCH_SUCCESS,
+    FETCH_SEARCH_BUTTON, FETCH_SEARCH_START, FETCH_SEARCH_SUCCESS,
     FETCH_WEATHER_DATA_SUCCESS,
     FETCH_WEATHER_START
 } from "./actionTypes";
@@ -64,7 +64,7 @@ export function fetchWeather(query) {
 
                 const currentDate = new Date().getDate();
 // Если текущая дата равна дате с сервера , то мы заполняем массив Main
-                if ((currentDate === serverDAY) || allWeather.list[0]) {
+                if ((currentDate === serverDAY) ) {
                     mainWeatherData.list.push(weather);
                     mainWeatherData.icon = weather.weather[0].icon;
                 }
@@ -118,20 +118,21 @@ export function fetchWeather(query) {
 export function fetchSearchList(query) {
 
 
-    return async dispatch => {
+    return async (dispatch,getState) => {
+        if (getState().weather.query.length > 0 && (getState().weather.query.trim() !=='')) {
+            try {
 
-                try {
-                    const dataAll = await axios.get(`https://cors-anywhere.herokuapp.com/https://www.metaweather.com/api/location/search/?query=${query}`);
+                const dataAll = await axios.get(`https://cors-anywhere.herokuapp.com/https://www.metaweather.com/api/location/search/?query=${query.trim()}`);
 
-                            const searchList = dataAll.data;
+                const searchList = dataAll.data;
 
-                        dispatch(fetchSearchEnd(searchList.slice(0,6)));
+                dispatch(fetchSearchEnd(searchList.slice(0, 6)));
 
-                } catch (e) {
-                    console.log(e);
-                }
-
+            } catch (e) {
+                console.log(e);
             }
+        }
+    }
 
 }
 
@@ -139,6 +140,12 @@ export function fetchSearchEnd(searchList) {
     return {
         type: FETCH_SEARCH_SUCCESS,
         searchList
+    }
+
+}
+export function fetchSearchStart() {
+    return {
+        type: FETCH_SEARCH_START
     }
 
 }
@@ -151,6 +158,7 @@ export function fetchWeatherStart() {
 
 export function fetchInputValue(query) {
     return (dispatch,getState) => {
+        dispatch(fetchSearchStart());
         dispatch(fetchInputBase(query));
 
 

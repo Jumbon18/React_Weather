@@ -68,7 +68,7 @@ this.props.fetchWeather();
                     onChange={event => this.props.fetchInput(event)}
                     placeholder="Searching for weather"
                 />
-                {this.props.searchList && this.props.query ?    <SearchList
+                {this.props.query ?    <SearchList
                     searchList={this.props.searchList}
                     clickedSearch={this.props.fetchClickedSearchElement}
 
