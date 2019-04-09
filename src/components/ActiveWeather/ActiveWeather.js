@@ -7,7 +7,7 @@ const ActiveWeather =  props =>{
 <div className="ActiveWeather">
     <h1>{props.city}</h1>
   <div className={"Active-temp"}>
-  <h2>{props.temperature}</h2>
+  <h2>{props.temperature}°</h2>
     <img src={props.icon}  alt=""/>
 
   </div>
@@ -15,6 +15,7 @@ const ActiveWeather =  props =>{
     <p id="desc-1">В основном облачно</p>
     <p id="desc-2">Обновлено в {props.time}</p>
   </div>
+  <div className="Weather-diagram"><span>75%</span></div>
 </div>
   )  ;
 };

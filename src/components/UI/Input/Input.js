@@ -6,7 +6,7 @@ console.log("INPUT",props);
     const cls = ['Input',
     props.styleInput];
     const htmlFor = `${inputType}-${Math.random()}`;
-
+console.log("INPUT PROPS",props);
     return (
 
                 <div >
