@@ -1,0 +1,16 @@
+.SearchList{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 60%;
+    height: 180px;
+    background: #ffffff;
+    position: absolute;
+    top:74px;
+    left: 20%;
+    border-radius: 15px;
+}
+.Error{
+    color: red!important;
+    text-align: center;
+}
