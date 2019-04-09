@@ -1,5 +1,5 @@
 import React from 'react';
-import './Weather.css';
+import './Weather.scss';
 import ActiveWeather from '../../components/ActiveWeather/ActiveWeather';
 import DailyWeather from '../../components/DailyWeather/DailyWeather';
 import {connect} from "react-redux";
@@ -14,7 +14,7 @@ import Loader from "../../components/UI/Loader/Loader";
 import {url} from "../../Icon/icon";
 import Search from "../../components/Search/Search";
 import Button from "../../components/UI/Button/Button";
-import {like} from "../../images/images";
+import like from "../../images/like.png";
 import SearchList from "./SearchList/SearchList";
 
 class Weather extends React.Component {
@@ -67,7 +67,10 @@ this.props.fetchWeather();
                     placeholder="Searching for weather"
                 />
                 <Button typeBtn="favorite-btn">
-                    <img src="../../images/"  alt="like"/>
+                    <div className="fav-div">
+                    <img src={like} alt="like" className="like-pic"/>
+                    <div className="like-text">Favorite this!</div>
+                    </div>
                 </Button>
                 {this.props.searchList && this.props.query ?    <SearchList
                     searchList={this.props.searchList}

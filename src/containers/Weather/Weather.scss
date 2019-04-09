@@ -19,9 +19,32 @@
     justify-content: space-between;
 }
 .like-pic {
+    padding: 6px 24px 0 0;
     width: 25px;
     height: 25px;
 }
+.like-text {
+    display: none;
+    margin: 10px 0 0 5px;
+}
+.fav-div{
+    margin: -12px;
+    display: flex;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    padding: 12px 0 0 11px;
+    &:hover{
+        width: 147px;
+        .like-text {
+            display: block;
+        }
+        .like-pic {
+            padding-right: 12px;
+        }
+    }
+}
+
 
 
 
