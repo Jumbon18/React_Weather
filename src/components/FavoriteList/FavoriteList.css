@@ -1,0 +1,43 @@
+.FavoriteList{
+    padding: 20px;
+    color:#ffffff;
+    border-radius: 5px;
+    margin: 0 0 50px 25%;
+    box-sizing: border-box;
+    font-family: 'Questrial', sans-serif;
+    text-align: center;
+    width: 300px;
+}
+.FavoriteList-temp {
+    display: flex;
+    justify-content: center;
+}
+.btnText {
+    color : white;
+    transition : .3s;
+}
+.hoverBtn {
+    position : relative;
+    width : 200px;
+    height : 100px;
+    margin-top: -84px;
+    padding-top: 2px;
+    background : #ED5565;
+    left : -250px;
+    transition : .3s;
+}
+.hoverText {
+    margin-top : 59px;
+    margin-right : 0px;
+    text-align: center;
+    color : #fafafa;
+}
+.hoverBtn:active {
+    box-shadow: 0px 5px 6px rgba(0,0,0,0.3);
+    background-color:  #DA4453;
+}
+
+
+.FavoriteList {
+    border: 1px solid #ffffff;
+}

@@ -1,11 +1,12 @@
 import React from 'react';
-import './Weather.css';
+import './Weather.scss';
 import ActiveWeather from '../../components/ActiveWeather/ActiveWeather';
 import DailyWeather from '../../components/DailyWeather/DailyWeather';
-
+import like from "../../images/like.png";
 
 import {connect} from "react-redux";
 import {
+    fetchAddToFavorites,
     fetchClearInput,
     fetchClickedSearchElement,
     fetchInputValue,
@@ -16,6 +17,7 @@ import Loader from "../../components/UI/Loader/Loader";
 import {url} from "../../Icon/icon";
 import Search from "../../components/Search/Search";
 import SearchList from "./SearchList/SearchList";
+import Button from "../../components/UI/Button/Button";
 
 class Weather extends React.Component {
 
@@ -73,6 +75,15 @@ this.props.fetchWeather();
                     clickedSearch={this.props.fetchClickedSearchElement}
 
                 />: null    }
+                <Button
+                    typeBtn="favorite-btn"
+                    onClick={this.props.fetchAddToFavorites}
+                >
+                    <div className="fav-div">
+                        <img src={like} alt="like" className="like-pic"/>
+                        <div className="like-text">Favorite this!</div>
+                    </div>
+                </Button>
 
                 <div className="WeatherWrapper">
 
@@ -118,7 +129,8 @@ function mapDispatchToProps(dispatch) {
         fetchWeather: query => dispatch(fetchWeather(query)),
         fetchInput: event => dispatch(fetchInputValue(event.target.value)),
         fetchClearInput: () => dispatch(fetchClearInput()),
-        fetchClickedSearchElement:(element) => dispatch(fetchClickedSearchElement(element))
+        fetchClickedSearchElement:(element) => dispatch(fetchClickedSearchElement(element)),
+        fetchAddToFavorites:() => dispatch(fetchAddToFavorites())
     }
 }
 

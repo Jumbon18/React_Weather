@@ -1,3 +1,14 @@
+$text-color: #444;
+$control-actionable-color: #bb0600;
+$control-actionable-accent-color: #990400;
+$control-actionable-text-color: #181818;
+$control-actionable-unsafe-color: #bb0600;
+$control-actionable-unsafe-accent-color: #990400;
+$control-actionable-safe-color: #00aa05;
+$control-actionable-safe-accent-color: #008803;
+$control-border-radius: 4px;
+$attachment-point-radius: 4px;
+$attachment-point-border: 2px;
 .Button{
     display: inline-block;
     border-radius: 4px;
@@ -73,4 +84,49 @@ cursor: pointer;
 
 .btn-1 {
     background-image: linear-gradient(to right, #f6d365 0%, #fda085 51%, #f6d365 100%);
+}
+.favorite-btn {
+    padding: 10px;
+    position: absolute;
+    left: 85%;
+    top: 20px;
+    background-color: transparent;
+    border: 2px white solid;
+    width: 60px;
+    height: 60px;
+    margin: 0;
+}
+
+.favorite-btn:hover {
+    width: 180px;
+}
+.delete{
+    background: #2d3039;
+    margin : 20px auto;
+    width : 200px;
+    padding: 0;
+    height : 50px;
+    overflow: hidden;
+    text-align : center;
+    transition : .4s;
+    cursor : pointer;
+    border-radius: 3px;
+    box-shadow: 0px 1px 2px rgba(0,0,0,.2);
+}
+.delete a{
+    color: #fafafa;
+    display: block;
+margin-top: 18px!important;
+    text-decoration: none;
+    -webkit-margin-before: 1em;
+    -webkit-margin-after: 1em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    transition: .5s;
+}
+.delete:hover .hoverBtn{
+    left: 0px;
+}
+.delete:hover a{
+    margin-left : 65px;
 }

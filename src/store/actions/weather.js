@@ -4,7 +4,7 @@ import {
     FETCH_CLEAR_INPUT, FETCH_CLICKED_SEARCH_ELEMENT,
 
     FETCH_INPUT_VALUE,
-    FETCH_SEARCH_BUTTON, FETCH_SEARCH_START, FETCH_SEARCH_SUCCESS,
+    FETCH_SEARCH_BUTTON, FETCH_SEARCH_START, FETCH_SEARCH_SUCCESS, FETCH_SUCCESS_ADD_TO_FAVORITE,
     FETCH_WEATHER_DATA_SUCCESS,
     FETCH_WEATHER_START
 } from "./actionTypes";
@@ -215,5 +215,33 @@ export function fetchSuccessClickedSearch(clickedQuery) {
     return {
         type:FETCH_CLICKED_SEARCH_ELEMENT,
         clickedQuery
+    }
+}
+export function fetchAddToFavorites() {
+    return (dispatch,getState) => {
+        if (localStorage.getItem('FAVORITES')) {
+            //JSON.stringify(JSON.parse(localStorage.getItem('FAVORITES').push(getState().weather.mainWeatherData)));
+            const newFavoriteList = JSON.parse(localStorage.getItem('FAVORITES'));
+            newFavoriteList.push(getState().weather.mainWeatherData);
+            localStorage.setItem('FAVORITES', JSON.stringify(newFavoriteList));
+            console.log(newFavoriteList, localStorage.getItem('FAVORITES'));
+           dispatch(fetchSuccessAddToFavorites(newFavoriteList));
+        } else {
+            console.log(getState().weather.mainWeatherData, getState().weather.favoritesList);
+            let newFavoriteList = [...getState().weather.favoritesList];
+
+            newFavoriteList.push(getState().weather.mainWeatherData);
+
+            localStorage.setItem('FAVORITES', JSON.stringify(newFavoriteList));
+            dispatch(fetchSuccessAddToFavorites(newFavoriteList));
+
+        }
+
+    }
+}
+export function fetchSuccessAddToFavorites(newFavoriteList) {
+    return{
+        type:FETCH_SUCCESS_ADD_TO_FAVORITE,
+        newFavoriteList
     }
 }
