@@ -1,9 +1,15 @@
 import {
 
-    FETCH_CLEAR_INPUT, FETCH_CLICKED_SEARCH_ELEMENT,
+    FETCH_CLEAR_INPUT,
+    FETCH_CLICKED_SEARCH_ELEMENT,
 
     FETCH_INPUT_VALUE,
-    FETCH_SEARCH_BUTTON, FETCH_SEARCH_START, FETCH_SEARCH_SUCCESS, FETCH_SUCCESS_ADD_TO_FAVORITE,
+    FETCH_SEARCH_BUTTON,
+    FETCH_SEARCH_START,
+    FETCH_SEARCH_SUCCESS,
+    FETCH_SELECT_ITEM,
+    FETCH_SUCCESS_ADD_TO_FAVORITE,
+    FETCH_SUCCESS_DELETE,
     FETCH_WEATHER_DATA_SUCCESS,
     FETCH_WEATHER_START
 } from "../actions/actionTypes";
@@ -61,8 +67,14 @@ export default function weatherReducer ( state = initialState,action) {
             return{
                 ...state,favoritesList: action.newFavoriteList
             };
-
-
+        case FETCH_SUCCESS_DELETE:
+            return{
+                ...state,favoritesList:action.newFavoriteList
+            };
+        case FETCH_SELECT_ITEM:
+            return {
+                ...state,query:action.query
+            };
       default:
           return state;
   }

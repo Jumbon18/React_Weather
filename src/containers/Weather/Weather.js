@@ -42,7 +42,7 @@ shouldComponentUpdate(nextProps, nextState, nextContext) {
 }
 
     componentDidMount() {
-this.props.fetchWeather();
+this.props.fetchWeather(this.props.query);
 
     }
     searchRequest =  event =>{

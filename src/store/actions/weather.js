@@ -1,14 +1,25 @@
 import axios from 'axios';
 import {
 
-    FETCH_CLEAR_INPUT, FETCH_CLICKED_SEARCH_ELEMENT,
+    FETCH_CLEAR_INPUT,
+    FETCH_CLICKED_SEARCH_ELEMENT,
 
     FETCH_INPUT_VALUE,
-    FETCH_SEARCH_BUTTON, FETCH_SEARCH_START, FETCH_SEARCH_SUCCESS, FETCH_SUCCESS_ADD_TO_FAVORITE,
+    FETCH_SEARCH_BUTTON,
+    FETCH_SEARCH_START,
+    FETCH_SEARCH_SUCCESS,
+    FETCH_SELECT_ITEM,
+    FETCH_SUCCESS_ADD_TO_FAVORITE,
+    FETCH_SUCCESS_DELETE,
     FETCH_WEATHER_DATA_SUCCESS,
     FETCH_WEATHER_START
 } from "./actionTypes";
 
+function* idMaker(){
+
+    while(true)
+        yield Math.random();
+}
 function round(objArr) {
     for (let key in objArr) {
         objArr[key] = Math.round(objArr[key]);
@@ -29,13 +40,14 @@ function getFullMonth(month) {
 export function fetchWeather(query) {
     return async dispatch => {
 
-        if (query === undefined) {
+        if (query === '') {
             query = "Kharkiv";
         }
         dispatch(fetchWeatherStart());
 
         try {
             const APIKEY = 'e335452a457543969efee8dcb3b78ad6';
+            dispatch(fetchClearInput());
 
             const dataGlobalAll = await axios.get(`https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/forecast?q=${query}&units=metric&APPID=${APIKEY}`);
 
@@ -106,6 +118,7 @@ export function fetchWeather(query) {
 
 
             dispatch(fetchWeatherDataSuccess(mainWeatherData, dailyWeatherData));
+
         } catch (e) {
             console.log(e);
 
@@ -219,29 +232,77 @@ export function fetchSuccessClickedSearch(clickedQuery) {
 }
 export function fetchAddToFavorites() {
     return (dispatch,getState) => {
+        let it= idMaker();
         if (localStorage.getItem('FAVORITES')) {
             //JSON.stringify(JSON.parse(localStorage.getItem('FAVORITES').push(getState().weather.mainWeatherData)));
             const newFavoriteList = JSON.parse(localStorage.getItem('FAVORITES'));
-            newFavoriteList.push(getState().weather.mainWeatherData);
-            localStorage.setItem('FAVORITES', JSON.stringify(newFavoriteList));
-            console.log(newFavoriteList, localStorage.getItem('FAVORITES'));
-           dispatch(fetchSuccessAddToFavorites(newFavoriteList));
+            if(newFavoriteList.findIndex((item,index)=>item.name.city.name === getState().weather.mainWeatherData.city.name)){
+                newFavoriteList.push({id:it.next().value , name: getState().weather.mainWeatherData});
+
+                localStorage.setItem('FAVORITES', JSON.stringify(newFavoriteList));
+                console.log(newFavoriteList, localStorage.getItem('FAVORITES'));
+                dispatch(fetchSuccessAddToFavorites(newFavoriteList));
+            }
+
         } else {
             console.log(getState().weather.mainWeatherData, getState().weather.favoritesList);
             let newFavoriteList = [...getState().weather.favoritesList];
 
-            newFavoriteList.push(getState().weather.mainWeatherData);
+            newFavoriteList.push({id:it.next().value , name: getState().weather.mainWeatherData});
 
-            localStorage.setItem('FAVORITES', JSON.stringify(newFavoriteList));
-            dispatch(fetchSuccessAddToFavorites(newFavoriteList));
 
+        localStorage.setItem('FAVORITES', JSON.stringify(newFavoriteList));
+        dispatch(fetchSuccessAddToFavorites(newFavoriteList));
+    }
         }
 
     }
-}
+
 export function fetchSuccessAddToFavorites(newFavoriteList) {
     return{
         type:FETCH_SUCCESS_ADD_TO_FAVORITE,
         newFavoriteList
     }
+}
+export function fetchDeleteCity(id) {
+    return (dispatch) =>{
+        console.log('Works');
+        if(localStorage.getItem('FAVORITES')){
+            const newFavoriteList = JSON.parse(localStorage.getItem('FAVORITES'));
+
+           const foundedIndex = newFavoriteList.findIndex((item,index)=> item.id === id);
+    console.log(foundedIndex,newFavoriteList);
+
+           if(foundedIndex !==null){
+
+        newFavoriteList.splice(foundedIndex,1);
+
+        localStorage.setItem('FAVORITES', JSON.stringify(newFavoriteList));
+                   dispatch(fetchSuccessDeleteItem(newFavoriteList));
+    }
+
+        }
+    }
+
+}
+export function fetchRestartState(){
+    return (dispatch) =>{
+        if(localStorage.getItem('FAVORITES')){
+            const newFavoriteList = JSON.parse(localStorage.getItem('FAVORITES'));
+            dispatch(fetchSuccessAddToFavorites(newFavoriteList));
+        }
+    }
+}
+export function fetchSuccessDeleteItem(newFavoriteList) {
+    return{
+        type:FETCH_SUCCESS_DELETE,
+        newFavoriteList
+    }
+}
+export function fetchToSelectItem(query) {
+    return {
+        type:FETCH_SELECT_ITEM,
+        query
+    }
+
 }
