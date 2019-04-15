@@ -241,7 +241,7 @@ export function fetchAddToFavorites() {
 
                 localStorage.setItem('FAVORITES', JSON.stringify(newFavoriteList));
                 console.log(newFavoriteList, localStorage.getItem('FAVORITES'));
-                dispatch(fetchSuccessAddToFavorites(newFavoriteList));
+                dispatch(fetchSuccessAddToFavorites(newFavoriteList));  
             }
 
         } else {

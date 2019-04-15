@@ -6,6 +6,7 @@ import facebook from '../../images/facebook.png';
 import github from '../../images/github.png';
 import skype from '../../images/skype.png';
 import instagram from '../../images/instagram.png';
+import {connect} from "react-redux";
 class Layout extends Component{
     state = {
         menu: false
@@ -22,6 +23,8 @@ class Layout extends Component{
              <Drawer
                  onClose={this.menuCloserHandler}
                  isOpen={this.state.menu}
+                 isAuthenticated = {this.props.isAuthenticated}
+
              />
              <MenuToggle
                  isOpen={this.state.menu}
@@ -49,4 +52,9 @@ class Layout extends Component{
      );
  }
 }
-export default Layout;
+function mapStateToProps(state) {
+    return{
+        isAuthenticated:!!state.auth.token
+    }
+}
+export default connect(mapStateToProps)(Layout);
