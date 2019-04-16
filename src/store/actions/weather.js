@@ -15,6 +15,16 @@ import {
     FETCH_WEATHER_START
 } from "./actionTypes";
 
+
+/*async function  checkPosition()
+{
+  await  navigator.geolocation.getCurrentPosition((position => {
+ return {
+    lat: position.coords.latitude,
+    long:position.coords.longitude
+};
+ }));
+}*/
 function* idMaker(){
 
     while(true)
@@ -39,17 +49,39 @@ function getFullMonth(month) {
 
 export function fetchWeather(query) {
     return async dispatch => {
-
-        if (query === '') {
-            query = "Kharkiv";
-        }
+let statePosition;
         dispatch(fetchWeatherStart());
+
+        if (navigator.geolocation) {
+            console.log('NAVIGATOR WORKS');
+
+            const getPosition = function (options) {
+                return new Promise(function (resolve, reject) {
+                    navigator.geolocation.getCurrentPosition(resolve, reject, options);
+                });
+            };
+
+         statePosition =   await getPosition();
+         console.log(statePosition.coords.latitude);
+
+        }
+
+    else {
+          console.log('OOOPS!');
+        }
 
         try {
             const APIKEY = 'e335452a457543969efee8dcb3b78ad6';
             dispatch(fetchClearInput());
+            let dataGlobalAll;
+            if (query === '') {
+                dataGlobalAll = await axios.get(`https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/forecast?lat=${statePosition.coords.latitude}&lon=${statePosition.coords.longitude}&units=metric&APPID=${APIKEY}`);
 
-            const dataGlobalAll = await axios.get(`https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/forecast?q=${query}&units=metric&APPID=${APIKEY}`);
+            }
+            else{
+                dataGlobalAll = await axios.get(`https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/forecast?q=${query}&units=metric&APPID=${APIKEY}`);
+
+            }
 
             const allWeather = dataGlobalAll.data;
 // Main weather object
@@ -236,7 +268,8 @@ export function fetchAddToFavorites() {
         if (localStorage.getItem('FAVORITES')) {
             //JSON.stringify(JSON.parse(localStorage.getItem('FAVORITES').push(getState().weather.mainWeatherData)));
             const newFavoriteList = JSON.parse(localStorage.getItem('FAVORITES'));
-            if(newFavoriteList.findIndex((item,index)=>item.name.city.name === getState().weather.mainWeatherData.city.name)){
+            console.log( newFavoriteList);
+            if(newFavoriteList.findIndex((item,index)=>item.name.city.name === getState().weather.mainWeatherData.city.name) === -1){
                 newFavoriteList.push({id:it.next().value , name: getState().weather.mainWeatherData});
 
                 localStorage.setItem('FAVORITES', JSON.stringify(newFavoriteList));
@@ -279,7 +312,9 @@ export function fetchDeleteCity(id) {
 
         localStorage.setItem('FAVORITES', JSON.stringify(newFavoriteList));
                    dispatch(fetchSuccessDeleteItem(newFavoriteList));
-    }
+               dispatch(fetchClearInput());
+
+           }
 
         }
     }

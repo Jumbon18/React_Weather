@@ -9,7 +9,7 @@ import {
     fetchAddToFavorites,
     fetchClearInput,
     fetchClickedSearchElement,
-    fetchInputValue,
+    fetchInputValue, fetchRestartState,
     fetchSearchList,
     fetchWeather
 } from "../../store/actions/weather";
@@ -37,28 +37,33 @@ class Weather extends React.Component {
         });
     };
 
-shouldComponentUpdate(nextProps, nextState, nextContext) {
-    return( (this.props.loading !== nextProps.loading) || (this.props.query !== nextProps.query));
-}
+    shouldComponentUpdate(nextProps, nextState, nextContext) {
+        return ((this.props.loading !== nextProps.loading) || (this.props.query !== nextProps.query));
+    }
 
     componentDidMount() {
-this.props.fetchWeather(this.props.query);
+        this.props.fetchWeather(this.props.query);
 
     }
-    searchRequest =  event =>{
+componentWillMount() {
+    this.props.fetchRestartState();
 
-    event.preventDefault();
-    if(this.props.query){
-        this.props.fetchClearInput();
+}
 
-             this.props.fetchWeather(this.props.query);
+    searchRequest = event => {
 
-         }
+        event.preventDefault();
+        if (this.props.query) {
+            this.props.fetchClearInput();
+
+            this.props.fetchWeather(this.props.query);
+
+        }
     };
 
 
     render() {
-        console.log('Render', this.props,'----------------------');
+        console.log('Render', this.props, '----------------------');
         return (
             <div className="Weather">
                 <Search
@@ -66,27 +71,37 @@ this.props.fetchWeather(this.props.query);
                     styleInput="Search-input"
                     query={this.props.query}
                     typeBtn="btn-1"
-                    onClick={ this.searchRequest}
+                    onClick={this.searchRequest}
                     onChange={event => this.props.fetchInput(event)}
                     placeholder="Searching for weather"
                 />
-                {this.props.query ?    <SearchList
+                {this.props.query ? <SearchList
                     searchList={this.props.searchList}
                     clickedSearch={this.props.fetchClickedSearchElement}
 
-                />: null    }
+                /> : null}
+
                 <Button
                     typeBtn="favorite-btn"
                     onClick={this.props.fetchAddToFavorites}
                 >
-                    <div className="fav-div">
-                        <img src={like} alt="like" className="like-pic"/>
-                        <div className="like-text">Favorite this!</div>
-                    </div>
+                    {!this.props.mainWeatherData ||(this.props.favoritesList.findIndex(el => el.name.city.name === this.props.mainWeatherData.city.name) !== -1) ?
+                        < div className="fav-div">
+                            <img src={like} alt="like" className="like-pic"/>
+                            <div className="like-text">ADDED!</div>
+                        </div>
+                        :
+
+                        < div className="fav-div">
+                            <img src={like} alt="like" className="like-pic"/>
+                            <div className="like-text">Favorite this!</div>
+                        </div>
+
+                    }
+
                 </Button>
 
                 <div className="WeatherWrapper">
-
 
 
                     {this.props.loading || !this.props.mainWeatherData ? <Loader/>
@@ -120,7 +135,8 @@ function mapStateToProps(state) {
         dailyWeatherData: state.weather.dailyWeatherData,
         query: state.weather.query,
         touchedSearchBtn: state.weather.touchedSearchBtn,
-        searchList:state.weather.searchList
+        searchList: state.weather.searchList,
+        favoritesList: state.weather.favoritesList
     }
 }
 
@@ -129,8 +145,9 @@ function mapDispatchToProps(dispatch) {
         fetchWeather: query => dispatch(fetchWeather(query)),
         fetchInput: event => dispatch(fetchInputValue(event.target.value)),
         fetchClearInput: () => dispatch(fetchClearInput()),
-        fetchClickedSearchElement:(element) => dispatch(fetchClickedSearchElement(element)),
-        fetchAddToFavorites:() => dispatch(fetchAddToFavorites())
+        fetchClickedSearchElement: (element) => dispatch(fetchClickedSearchElement(element)),
+        fetchAddToFavorites: () => dispatch(fetchAddToFavorites()),
+        fetchRestartState:()=>dispatch(fetchRestartState())
     }
 }
 

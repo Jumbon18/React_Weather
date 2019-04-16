@@ -2,24 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b1ad86cc-d0b8-478a-beb5-0ebf65ed8900" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/Form/formFrameworks.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Logout/Logout.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/containers/Auth/Auth.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/containers/Auth/Auth.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/store/actions/auth.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/store/reducers/auth.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Navigation/Drawer/Drawer.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Navigation/Drawer/Drawer.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Navigation/Drawer/Drawer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Navigation/Drawer/Drawer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/UI/Button/Button.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UI/Button/Button.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/UI/Button/Button.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UI/Button/Button.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/UI/Input/Input.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UI/Input/Input.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/UI/Input/Input.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UI/Input/Input.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hoc/Layout/Layout.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/hoc/Layout/Layout.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/actions/actionTypes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/actions/actionTypes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/Weather/Weather.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/Weather/Weather.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/store/actions/weather.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/actions/weather.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/reducers/rootReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/reducers/rootReducer.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -34,121 +19,74 @@
     <favorites_list name="awc_reactjs" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.5">
-      <split-first>
-        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/store/reducers/auth.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="460">
-                  <caret line="20" column="14" selection-start-line="20" selection-start-column="14" selection-end-line="20" selection-end-column="14" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/store/actions/auth.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="230">
-                  <caret line="34" lean-forward="true" selection-start-line="34" selection-end-line="34" />
-                  <folding>
-                    <element signature="e#0#26#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/components/Form/formFrameworks.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="276">
-                  <caret line="12" column="5" lean-forward="true" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="5" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/store/reducers/rootReducer.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="115">
-                  <caret line="5" column="7" selection-start-line="5" selection-start-column="3" selection-end-line="5" selection-end-column="7" />
-                  <folding>
-                    <element signature="e#0#38#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/components/UI/Input/Input.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="437">
-                  <caret line="34" column="34" lean-forward="true" selection-start-line="34" selection-start-column="34" selection-end-line="34" selection-end-column="34" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/containers/Weather/Weather.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1449">
-                  <caret line="63" column="19" lean-forward="true" selection-start-line="63" selection-start-column="19" selection-end-line="63" selection-end-column="19" />
-                  <folding>
-                    <element signature="e#0#26#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/components/UI/Button/Button.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="253">
-                  <caret line="11" column="37" lean-forward="true" selection-start-line="11" selection-start-column="11" selection-end-line="11" selection-end-column="37" />
-                  <folding>
-                    <element signature="e#0#26#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/store/actions/actionTypes.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="414">
-                  <caret line="18" column="51" selection-start-line="18" selection-start-column="51" selection-end-line="18" selection-end-column="51" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/components/UI/Button/Button.scss">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="375">
-                  <caret line="133" column="4" selection-start-line="133" selection-start-column="4" selection-end-line="133" selection-end-column="4" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-first>
-      <split-second>
-        <leaf>
-          <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/containers/Auth/Auth.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="184">
-                  <caret line="47" column="6" lean-forward="true" selection-start-line="43" selection-end-line="47" selection-end-column="6" />
-                  <folding>
-                    <element signature="e#0#26#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-second>
-    </splitter>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/store/actions/weather.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="265">
+              <caret line="271" column="133" lean-forward="true" selection-start-line="271" selection-start-column="133" selection-end-line="271" selection-end-column="133" />
+              <folding>
+                <element signature="e#0#26#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/containers/Favorities/Favorites.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="391">
+              <caret line="29" column="7" selection-start-line="29" selection-start-column="7" selection-end-line="29" selection-end-column="39" />
+              <folding>
+                <element signature="e#0#25#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/store/reducers/weather.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="253">
+              <caret line="25" column="17" selection-start-line="25" selection-start-column="4" selection-end-line="25" selection-end-column="17" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/containers/Weather/Weather.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="299">
+              <caret line="148" column="58" lean-forward="true" selection-start-line="148" selection-start-column="58" selection-end-line="148" selection-end-column="58" />
+              <folding>
+                <element signature="e#0#26#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/UI/Button/Button.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="230">
+              <caret line="11" column="37" lean-forward="true" selection-start-line="11" selection-start-column="11" selection-end-line="11" selection-end-column="37" />
+              <folding>
+                <element signature="e#0#26#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/store/actions/actionTypes.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="414">
+              <caret line="18" column="51" selection-start-line="18" selection-start-column="51" selection-end-line="18" selection-end-column="51" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -192,11 +130,8 @@
         <option value="$PROJECT_DIR$/src/containers/Weather/Weather.scss" />
         <option value="$PROJECT_DIR$/src/containers/Favorities/Favorites.css" />
         <option value="$PROJECT_DIR$/src/containers/Favorities/Favorites.js" />
-        <option value="$PROJECT_DIR$/src/containers/Weather/Weather.js" />
-        <option value="$PROJECT_DIR$/src/store/reducers/weather.js" />
         <option value="$PROJECT_DIR$/src/components/FavoriteList/FavoriteList.css" />
         <option value="$PROJECT_DIR$/src/components/FavoriteList/FavoriteList.js" />
-        <option value="$PROJECT_DIR$/src/store/actions/weather.js" />
         <option value="$PROJECT_DIR$/src/containers/Auth/Auth.css" />
         <option value="$PROJECT_DIR$/src/components/Form/formFrameworks.js" />
         <option value="$PROJECT_DIR$/src/store/reducers/rootReducer.js" />
@@ -213,12 +148,15 @@
         <option value="$PROJECT_DIR$/src/store/actions/auth.js" />
         <option value="$PROJECT_DIR$/src/store/reducers/auth.js" />
         <option value="$PROJECT_DIR$/src/containers/Auth/Auth.js" />
+        <option value="$PROJECT_DIR$/src/store/reducers/weather.js" />
+        <option value="$PROJECT_DIR$/src/containers/Weather/Weather.js" />
+        <option value="$PROJECT_DIR$/src/store/actions/weather.js" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="960" />
-    <option name="width" value="960" />
+    <option name="x" value="952" />
+    <option name="width" value="977" />
     <option name="height" value="1038" />
   </component>
   <component name="ProjectView">
@@ -309,7 +247,7 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../react-quiz" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../9-forkify" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
@@ -356,7 +294,9 @@
       <workItem from="1554847134303" duration="11133000" />
       <workItem from="1554990990441" duration="1325000" />
       <workItem from="1555096229168" duration="8670000" />
-      <workItem from="1555145259489" duration="19506000" />
+      <workItem from="1555145259489" duration="19650000" />
+      <workItem from="1555354738532" duration="4488000" />
+      <workItem from="1555406651645" duration="4247000" />
     </task>
     <task id="LOCAL-00001" summary="Normalniy search">
       <created>1554808141785</created>
@@ -379,11 +319,18 @@
       <option name="project" value="LOCAL" />
       <updated>1555183916265</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Registration Done!">
+      <created>1555318213982</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1555318213982</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="67318000" />
+    <option name="totallyTimeSpent" value="76197000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -412,7 +359,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" sideWeight="0.4976867" weight="0.32352942" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.22207534" side_tool="true" weight="0.32941177" />
-      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.77792466" weight="0.33333334" />
+      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.77792466" visible="true" weight="0.13529412" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -486,7 +433,8 @@
     <MESSAGE value="Normalniy search" />
     <MESSAGE value="First step favorites" />
     <MESSAGE value="Favorites DONE!!!" />
-    <option name="LAST_COMMIT_MESSAGE" value="Favorites DONE!!!" />
+    <MESSAGE value="Registration Done!" />
+    <option name="LAST_COMMIT_MESSAGE" value="Registration Done!" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/package.json">
@@ -592,16 +540,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/containers/Favorities/Favorites.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="145">
-          <caret line="16" column="53" selection-start-line="16" selection-start-column="34" selection-end-line="16" selection-end-column="53" />
-          <folding>
-            <element signature="e#0#25#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/FavoriteList/FavoriteList.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="487">
@@ -643,23 +581,6 @@
           <folding>
             <element signature="e#0#39#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/store/actions/weather.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5382">
-          <caret line="243" column="58" selection-start-line="243" selection-start-column="58" selection-end-line="243" selection-end-column="58" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/store/reducers/weather.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1426">
-          <caret line="76" column="14" selection-start-line="76" selection-start-column="14" selection-end-line="76" selection-end-column="14" />
         </state>
       </provider>
     </entry>
@@ -706,20 +627,71 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/UI/Button/Button.scss">
+    <entry file="file://$PROJECT_DIR$/src/store/actions/auth.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="133" column="4" selection-start-line="133" selection-start-column="4" selection-end-line="133" selection-end-column="4" />
+        <state relative-caret-position="759">
+          <caret line="34" selection-start-line="34" selection-end-line="34" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/store/reducers/auth.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="253">
+          <caret line="11" column="25" selection-start-line="11" selection-start-column="25" selection-end-line="11" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/store/reducers/rootReducer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="69">
+          <caret line="5" column="7" selection-start-line="5" selection-start-column="3" selection-end-line="5" selection-end-column="7" />
+          <folding>
+            <element signature="e#0#38#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/UI/Input/Input.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="759">
+          <caret line="34" column="34" selection-start-line="34" selection-start-column="34" selection-end-line="34" selection-end-column="34" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/UI/Button/Button.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="253">
+        <state relative-caret-position="230">
           <caret line="11" column="37" lean-forward="true" selection-start-line="11" selection-start-column="11" selection-end-line="11" selection-end-column="37" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/containers/Auth/Auth.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="47" column="6" lean-forward="true" selection-start-line="43" selection-end-line="47" selection-end-column="6" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Form/formFrameworks.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="276">
+          <caret line="12" column="5" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/UI/Button/Button.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="473">
+          <caret line="133" column="4" selection-start-line="133" selection-start-column="4" selection-end-line="133" selection-end-column="4" />
         </state>
       </provider>
     </entry>
@@ -730,61 +702,37 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/store/reducers/rootReducer.js">
+    <entry file="file://$PROJECT_DIR$/src/containers/Favorities/Favorites.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="115">
-          <caret line="5" column="7" selection-start-line="5" selection-start-column="3" selection-end-line="5" selection-end-column="7" />
+        <state relative-caret-position="391">
+          <caret line="29" column="7" selection-start-line="29" selection-start-column="7" selection-end-line="29" selection-end-column="39" />
           <folding>
-            <element signature="e#0#38#0" expanded="true" />
+            <element signature="e#0#25#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Form/formFrameworks.js">
+    <entry file="file://$PROJECT_DIR$/src/store/reducers/weather.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
-          <caret line="12" column="5" lean-forward="true" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="5" />
+        <state relative-caret-position="253">
+          <caret line="25" column="17" selection-start-line="25" selection-start-column="4" selection-end-line="25" selection-end-column="17" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/containers/Weather/Weather.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1449">
-          <caret line="63" column="19" lean-forward="true" selection-start-line="63" selection-start-column="19" selection-end-line="63" selection-end-column="19" />
+        <state relative-caret-position="299">
+          <caret line="148" column="58" lean-forward="true" selection-start-line="148" selection-start-column="58" selection-end-line="148" selection-end-column="58" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/UI/Input/Input.js">
+    <entry file="file://$PROJECT_DIR$/src/store/actions/weather.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="437">
-          <caret line="34" column="34" lean-forward="true" selection-start-line="34" selection-start-column="34" selection-end-line="34" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/store/actions/auth.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="34" lean-forward="true" selection-start-line="34" selection-end-line="34" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/store/reducers/auth.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="460">
-          <caret line="20" column="14" selection-start-line="20" selection-start-column="14" selection-end-line="20" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/containers/Auth/Auth.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="47" column="6" lean-forward="true" selection-start-line="43" selection-end-line="47" selection-end-column="6" />
+        <state relative-caret-position="265">
+          <caret line="271" column="133" lean-forward="true" selection-start-line="271" selection-start-column="133" selection-end-line="271" selection-end-column="133" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
