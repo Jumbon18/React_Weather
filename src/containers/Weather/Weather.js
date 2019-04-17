@@ -60,12 +60,32 @@ componentWillMount() {
 
         }
     };
+        changeBackground =()=>{
 
+          const date= new Date().getHours();
+          console.log(date);
+          if(date >= 20 && date < 4 ){
+
+              return "url('https://wallpapersite.com/images/pages/pic_h/17131.jpg')";
+
+          }else if(date >=4 && date < 9){
+
+              return "url('https://wallpapersite.com/images/pages/pic_h/15612.jpg')";
+          }
+          else if(date >= 16 && date<20){
+              return "url('https://wallpapersite.com/images/pages/pic_h/17410.jpg')";
+          }
+          else{
+              return  "url('https://wallpapersite.com/images/pages/pic_h/17127.jpg')";
+
+          }
+
+        };
 
     render() {
         console.log('Render', this.props, '----------------------');
         return (
-            <div className="Weather">
+            <div className="Weather"  style={{backgroundImage: this.changeBackground()}}>
                 <Search
                     typeInput="text"
                     styleInput="Search-input"
