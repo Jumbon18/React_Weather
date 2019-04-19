@@ -132,6 +132,7 @@ componentWillUnmount() {
                     shouldValidate={!!control.validation}
                     errorMessage={control.errorMessage}
                     onChange={(event) => this.onChangeHandler(event, controlName)}
+                    styleInput="auth-input"
                 />
 
             )
@@ -144,9 +145,7 @@ componentWillUnmount() {
             <div className={'Auth'}>
                 <div>
                     <h1>Login</h1>
-
                     <form onSubmit={this.submitHandler} className={'AuthForm'}>
-
                        <div>{this.renderInputs()}</div>
                         <Button typeBtn="login-btn auth-btn" disabled={!this.state.isFormValid}
                                 onClick={this.loginHandler}>Log in</Button>
