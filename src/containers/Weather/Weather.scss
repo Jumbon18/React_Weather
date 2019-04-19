@@ -11,8 +11,13 @@
     color:#ffffff;
     margin-left: 10px;
 }
-
-.WeatherWrapper ul{
+.WeatherWrapper {
+    margin-top: 45px;
+}
+.daily-list {
+    height: 150px;
+}
+.WeatherWrapper ul {
     padding: 0;
     display: flex;
     list-style: none;

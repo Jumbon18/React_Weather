@@ -15,7 +15,6 @@ const ActiveWeather =  props =>{
     <p id="desc-1">В основном облачно</p>
     <p id="desc-2">Обновлено в {props.time}</p>
   </div>
-  <div className="Weather-diagram"><span>75%</span></div>
 </div>
   )  ;
 };

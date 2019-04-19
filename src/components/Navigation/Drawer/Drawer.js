@@ -25,15 +25,15 @@ class Drawer extends React.Component{
             'Drawer'
         ];
         const links = [
-            {url:'/',text:'Главная страница',exact:true},
+            {url:'/',text:'Main page',exact:true},
         ];
         if (this.props.isAuthenticated) {
-            links.push({url: '/favorites', text: ' Избранные', exact: false});
-            links.push({url: '/logout', text: 'Выйти', exact: false}
+            links.push({url: '/favorites', text: 'My favorites', exact: false});
+            links.push({url: '/logout', text: 'Log out', exact: false}
             )
 
         } else {
-            links.push({url: '/auth', text: 'Авторизация', exact: false},
+            links.push({url: '/auth', text: 'Login', exact: false},
             )
         }
         if(!this.props.isOpen){

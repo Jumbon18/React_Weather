@@ -5,6 +5,8 @@
     color: white;
     text-align: center;
     box-sizing: border-box;
+    padding-top: 15px;
+    margin-right: 20px;
 }
 .w-list {
     list-style: none;
@@ -15,7 +17,8 @@
     justify-content: space-around;
 }
 .DailyWeather:hover{
-    border: 2px solid #ffffff;
+    border: 1px solid #ffffff;
     transition: 5ms linear;
     cursor: pointer;
+    box-shadow:   0 0 7px 5px #cc6021;
 }

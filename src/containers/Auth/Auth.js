@@ -9,8 +9,6 @@ import Input from "../../components/UI/Input/Input";
 class Auth extends React.Component{
     _isMounted = false;
     state = {
-
-
         errorAuth: false,
         isFormValid: false,
         formControl: {
@@ -18,20 +16,21 @@ class Auth extends React.Component{
                 value: '',
                 type: 'email',
                 label: 'Email',
-                errorMessage: 'Введите корректный email',
+                placeholder: 'Enter your email',
+                errorMessage: 'Enter the proper email',
                 valid: false,
                 touched: false,
                 validation: {
                     required: true,
                     email: true
                 }
-
             },
             password: {
                 value: '',
                 type: 'password',
-                label: 'Пароль',
-                errorMessage: 'Введите корректный пароль',
+                label: 'Password',
+                placeholder: 'Enter your password',
+                errorMessage: 'Enter the proper password',
                 valid: false,
                 touched: false,
                 validation: {
@@ -122,7 +121,6 @@ componentWillUnmount() {
             const control = this.state.formControl[controlName];
             return (
                 <Input
-
                     errorAuth={this.state.errorAuth}
                     key={controlName + index}
                     type={control.type}
@@ -130,6 +128,7 @@ componentWillUnmount() {
                     valid={control.valid}
                     touched={control.touched}
                     label={control.label}
+                    placeholder={control.placeholder}
                     shouldValidate={!!control.validation}
                     errorMessage={control.errorMessage}
                     onChange={(event) => this.onChangeHandler(event, controlName)}
@@ -144,19 +143,15 @@ componentWillUnmount() {
         return (
             <div className={'Auth'}>
                 <div>
-                    <h1>Авторизация</h1>
+                    <h1>Login</h1>
 
                     <form onSubmit={this.submitHandler} className={'AuthForm'}>
 
-                        {this.renderInputs()}
-                        <Button typeBtn="success-btn" disabled={!this.state.isFormValid}
-                                onClick={this.loginHandler}>Войти</Button>
-
-                        <Button typeBtn="primary" disabled={!this.state.isFormValid}
-                                onClick={this.registerHandler}>Зарегистрироваться</Button>
-
-                    </form>
-
+                       <div>{this.renderInputs()}</div>
+                        <Button typeBtn="login-btn auth-btn" disabled={!this.state.isFormValid}
+                                onClick={this.loginHandler}>Log in</Button>
+                        <Button typeBtn="sign-btn auth-btn" disabled={!this.state.isFormValid} onClick={this.registerHandler}>Sign in</Button>
+                        </form>
                 </div>
             </div>
         )
