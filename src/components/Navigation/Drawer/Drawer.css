@@ -5,12 +5,14 @@
     bottom: 0;
     width: 80%;
     max-width: 300px;
-    padding: 20px 10px ;
+    padding: 20px 10px;
     box-sizing: border-box;
-    background: white;
     z-index: 90;
     transform: translateX(0px);
     transition: transform .22s ease-in;
+    font-family: 'Questrial', sans-serif;
+    text-align: center;
+    background-image: url("../../../images/mountains-1920x1080-landscape-sky-blue-layers-4k-17546.jpg");
 }
 .Drawer.close{
     transform: translateX(-300px);
@@ -19,21 +21,19 @@
     list-style: none;
     margin: 0;
     padding: 0;
-display: block;
+    display: block;
 }
 .Drawer ul li{
-    margin-bottom: 15px;
-
+    margin-bottom: 25px;
 }
 .Drawer ul li a{
-    color: #363d54;
+    color: darkblue;
     font-size: 30px;
     text-decoration: none;
-    background-color: white;
-    padding: 0 20px 10px 20px;
+    padding: 0 10px 20px 10px;
     position: relative;
-    transition:opacity .3s;
+    transition: opacity .3s;
 }
-.Drawer ul li a:hover,.active{
-    opacity: .7;
+.Drawer ul li a:hover{
+    text-shadow: 2px 2px 2px white;
 }

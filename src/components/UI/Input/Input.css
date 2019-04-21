@@ -1,13 +1,14 @@
-.Input input{
+.Input input {
     margin-bottom: 15px;
-    width: 200px    ;
+    width: 200px;
 }
-.Input label{
+.Input label {
     margin-bottom: 3px;
-    padding: 0px;
+    padding: 0;
     display: block;
     font-weight: bold;
 }
+
 .Input input {
     display: block;
     box-sizing: border-box;
@@ -17,8 +18,8 @@
     width: 100%;
     outline: none;
     transition: all 300ms ease-in-out;
-
 }
+
 input:focus{
     outline: none;
 }
@@ -40,7 +41,7 @@ input:focus{
     background-color: #ffffff;
     color:red;
     width: 150px;
-    box-shadow: 10px 10px 5px 0px rgba(255,10,10,1);
+    box-shadow: 10px 10px 5px 0 rgba(255,10,10,1);
     border-radius: 7px;
     padding: 10px;
     height: 70px;
@@ -52,4 +53,9 @@ input:focus{
     color: inherit;
     font-size: 1.5rem;
     width: 30rem;
+}
+
+.auth-input input {
+    border-radius: 5px;
+    box-shadow: 2px 2px 7px 1px rgba(210, 111, 24, 0.66);
 }

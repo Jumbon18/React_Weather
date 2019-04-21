@@ -22,21 +22,20 @@ console.log("INPUT PROPS",props);
                 <div className={cls.join(' ')} >
                     <label htmlFor={htmlFor}>{props.label}</label>
                     <input
-                        type={inputType}
+                           type={inputType}
                            id={htmlFor}
                            value={props.value}
                            onChange={props.onChange}
                            placeholder={props.placeholder}
-
                     />
                     {
                         props.errorAuth ?
-                            <div className="errorAuth"> Неправильный логин или пароль</div>
+                            <div className="errorAuth">Wrong login or password</div>
                             : null
                     }
                     {isInvalid(props)
                         ?
-                        <span>{props.errorMessage || 'Введите верное значение'}</span>
+                        <span>{props.errorMessage || 'Enter the proper value'}</span>
 
                         : null}
 
