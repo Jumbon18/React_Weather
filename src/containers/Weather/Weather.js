@@ -25,7 +25,7 @@ class Weather extends React.Component {
     renderDailyWeather = () => {
         return Object.keys(this.props.dailyWeatherData.list).map((item, index) => {
             return (
-                <li key={index + 'a'}>
+                <li key={index + 'a'} className="daily-list">
                     <DailyWeather
                         day={this.props.dailyWeatherData.list[index].day}
                         maxTemp={this.props.dailyWeatherData.list[index].maxTemp}
