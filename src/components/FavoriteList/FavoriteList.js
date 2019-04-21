@@ -8,10 +8,6 @@ import {NavLink} from "react-router-dom";
 const FavoriteList= (props) =>{
     console.log(props);
     return(
-
-
-
-
             <div className="FavoriteList"   onClick={()=>props.onSelect(props.state.name.city.name)} >
                 <NavLink to="/" className="invivsible-url" ><div> </div></NavLink>
                 <h1>{props.city}</h1>

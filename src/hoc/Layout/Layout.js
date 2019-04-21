@@ -33,7 +33,7 @@ class Layout extends Component{
 <main>
     {this.props.children}
 </main>
-             {<div className="footer" id="animate-area">
+             {<footer className="footer" id="animate-area">
             <div className="wrapper">
                 <div>
                 <h2>Awesome Weather Cast</h2>
@@ -47,7 +47,7 @@ class Layout extends Component{
                 <img src={github} className="footer-img"/>
             </div>
             </div>
-    </div>}
+    </footer>}
              </div>
      );
  }

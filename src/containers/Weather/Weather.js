@@ -72,7 +72,7 @@ componentWillMount() {
 
               return "url('https://wallpapersite.com/images/pages/pic_h/15612.jpg')";
           }
-          else if(date >= 16 && date<20){
+          else if(date >= 15 && date<20){
               return "url('https://wallpapersite.com/images/pages/pic_h/17410.jpg')";
           }
           else{

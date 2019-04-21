@@ -82,7 +82,7 @@ let statePosition;
                 dataGlobalAll = await axios.get(`https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/forecast?q=${query}&units=metric&APPID=${APIKEY}`);
 
             }
-
+console.log(dataGlobalAll,'=+++===+++===++');
             const allWeather = dataGlobalAll.data;
 // Main weather object
             const mainWeatherData = {
@@ -105,7 +105,6 @@ let statePosition;
                 const fullDate = weather.dt_txt.split(' ');
                 const serverDate = fullDate[0].split('-');
                 const serverDAY = parseInt(serverDate[2]);
-
                 const currentDate = new Date().getDate();
 // Если текущая дата равна дате с сервера , то мы заполняем массив Main
                 if ((currentDate === serverDAY) ) {
@@ -146,7 +145,7 @@ let statePosition;
                 weatherItem.icon = dayWeatherArr[Math.round((dayWeatherArr.length / 2) - 1)].weather[0].icon;
             });
 
-// Изменияем STORE
+// Изменяем STORE
 
 
             dispatch(fetchWeatherDataSuccess(mainWeatherData, dailyWeatherData));
