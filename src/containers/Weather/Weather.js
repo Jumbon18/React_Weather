@@ -64,7 +64,7 @@ componentWillMount() {
 
           const date= new Date().getHours();
           console.log(date);
-          if(date >= 20 && date < 4 ){
+          if(date >= 20 || date < 4){
 
               return "url('https://wallpapersite.com/images/pages/pic_h/17131.jpg')";
 

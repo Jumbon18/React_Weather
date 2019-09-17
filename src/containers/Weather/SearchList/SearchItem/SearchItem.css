@@ -10,3 +10,9 @@
     background: rgba(255,255,255,.2);
     transition: background .3s ease-in-out;
 }
+.SearchItem:first-child:hover {
+    border-radius: 15px 15px 0 0;
+}
+.SearchItem:last-child:hover {
+    border-radius: 0 0 15px 15px;
+}

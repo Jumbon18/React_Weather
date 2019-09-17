@@ -1,0 +1,163 @@
+.Button {
+  display: inline-block;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  color: #000;
+  margin-right: 15px;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 12px;
+  height: 45px;
+}
+
+.Button:focus, .btn:focus {
+  outline: none;
+}
+
+.Button:active {
+  box-shadow: inset 2px 2px 1px rgba(0, 0, 0, 0.3);
+}
+
+.Button:disabled {
+  background: #ccc;
+  color: #000000;
+  cursor: not-allowed;
+}
+
+.error-btn {
+  background: #f0576c;
+}
+
+.success-btn {
+  background: #a1f045;
+}
+
+.primary {
+  background: #2884f6;
+  color: #ffffff;
+}
+
+.search {
+  background-image: linear-gradient(to right bottom, #FBDB89, #F48982);
+  border-radius: 10rem;
+  border: none;
+  text-transform: uppercase;
+  color: #fff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  transition: all 0.2s;
+  padding: 1.1rem 3rem;
+  margin-right: 0;
+}
+
+.btn {
+  flex: 1 1 auto;
+  text-align: center;
+  transition: 0.5s;
+  background-size: 200% auto;
+  padding: 1.1rem 3rem;
+  color: white;
+  /* text-shadow: 0px 0px 10px rgba(0,0,0,0.2);*/
+  box-shadow: 0 0 20px #eee;
+  border-radius: 10rem;
+  border: none;
+  margin-left: 15px;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 12px;
+  height: 45px;
+  font-family: "Questrial", sans-serif;
+}
+
+/* Demo Stuff End -> */
+/* <- Magic Stuff Start */
+.btn:hover {
+  background-position: right center;
+  cursor: pointer;
+}
+
+.btn-1 {
+  background-image: linear-gradient(to right, #f6d365 0%, #fda085 51%, #f6d365 100%);
+}
+
+.favorite-btn {
+  padding: 10px;
+  position: absolute;
+  left: 85%;
+  top: 20px;
+  background-color: transparent;
+  border: 2px white solid;
+  width: 60px;
+  height: 60px;
+  margin: 0;
+}
+
+.auth-btn {
+  width: 75px;
+  height: 75px;
+  padding: 0;
+  border-radius: 50%;
+}
+
+.login-btn {
+  background-image: linear-gradient(to right, pink, blue);
+  margin: 10px 0 0 135px;
+}
+
+.sign-btn {
+  background-image: linear-gradient(to bottom left, red, wheat);
+  margin: 10px 0 0 40px;
+}
+
+.favorite-btn:hover {
+  width: 180px;
+}
+
+.delete {
+  position: relative;
+  background: #2d3039;
+  margin: 20px auto;
+  width: 200px;
+  padding: 0;
+  height: 50px;
+  overflow: hidden;
+  text-align: center;
+  transition: 0.4s;
+  cursor: pointer;
+  border-radius: 3px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.delete a {
+  color: #fafafa;
+  display: block;
+  margin-top: 18px !important;
+  text-decoration: none;
+  -webkit-margin-before: 1em;
+  -webkit-margin-after: 1em;
+  -webkit-margin-start: 0;
+  -webkit-margin-end: 0;
+  transition: 0.5s;
+}
+
+.delete:hover .hoverBtn {
+  left: 0;
+}
+
+.delete:hover a {
+  margin-left: 65px;
+}
+
+.btn:disabled {
+  background: #ccc;
+  color: #000000;
+  cursor: not-allowed;
+  width: 75px;
+  height: 75px;
+  padding: 0;
+  border-radius: 50%;
+  margin-top: 15px;
+}
+
+/*# sourceMappingURL=Button.css.map */

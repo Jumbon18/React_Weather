@@ -37,7 +37,7 @@ console.log('RENDER BITHC');
                <ul>
                    {this.props.favoritesList.length > 0 ?
                        this.renderFavorites() :
-                       <h1>NONE</h1>
+                       <h1 className="no-favorites">Your favorite list is empty;)</h1>
                    }
 
                </ul>

@@ -5,7 +5,7 @@ import Button from "../UI/Button/Button";
 const Search = (props) =>{
     console.log("SEARCH",props);
   return(
-      <div className="Search">
+      <form type="submit" className="Search">
           <Input
           typeInput={props.type}
           styleInput={props.styleInput}
@@ -19,7 +19,7 @@ const Search = (props) =>{
           >
               Search!
           </Button>
-      </div>
+      </form>
   )
 
 };

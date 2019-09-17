@@ -1,0 +1,68 @@
+@keyframes fade-in {
+  0% {
+    opacity: 0.1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.Weather {
+  animation: fade-in 1s linear;
+  display: flex;
+  justify-content: center;
+  padding: 100px 0 100px 0;
+  flex-grow: 1;
+  width: 100%;
+  position: inherit;
+}
+
+.Weather h1 {
+  color: #ffffff;
+  margin-left: 10px;
+}
+
+.WeatherWrapper {
+  margin-top: 45px;
+}
+
+.daily-list {
+  height: 150px;
+}
+
+.WeatherWrapper ul {
+  padding: 0;
+  display: flex;
+  list-style: none;
+  justify-content: space-between;
+}
+
+.like-pic {
+  padding: 6px 24px 0 0;
+  width: 25px;
+  height: 25px;
+}
+
+.like-text {
+  display: none;
+  margin: 10px 0 0 5px;
+}
+
+.fav-div {
+  margin: -12px;
+  display: flex;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  padding: 12px 0 0 11px;
+}
+.fav-div:hover {
+  width: 147px;
+}
+.fav-div:hover .like-text {
+  display: block;
+}
+.fav-div:hover .like-pic {
+  padding-right: 20px;
+}
+
+/*# sourceMappingURL=Weather.css.map */
